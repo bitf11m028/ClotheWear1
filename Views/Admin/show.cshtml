@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "show";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+            
+      <table class="table" border="0">
+         @* <caption><h1> Items</h1></caption>*@
+        <thead>
+         <tr>
+             <td><h3>    Product </h3></td>
+             <td><h3>    Title   </h3></td>
+             <td><h3>    Price   </h3></td>
+             <td><h3>Description </h3></td>
+         </tr>
+            </thead>
+         @foreach (var x in Model)
+            {
+             <tbody>
+
+               <tr class="active">
+                  <td><img src="~/images/@x.ImageUrl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                  <td><h4>@x.Title</h4></td>
+                  <td><h4>@x.Price</h4></td>
+                  <td><h4>@x.Description</h4></td>
+              </tr>
+
+             </tbody>        
+               
+            }
+
+      </table>   
+
+  
+

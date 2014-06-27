@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Boys";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@{
+    ClotheWear.Models.Database1Entities1 db = new ClotheWear.Models.Database1Entities1();
+ }
+
+@using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+{
+    <div class="container">
+     @foreach (var item in Model)
+      {
+         <div class="col-sm-6 col-md-3">
+              <div class="thumbnail">
+                   <img src="~/images/@item.ImageUrl" alt="Generic placeholder thumbnail">
+              </div>
+              <div class="caption">
+                  
+                   <p> <a href="/Home/Detail/@item.Id" class="btn btn-primary" role="button"> Add To Cart </a>
+                   </p>
+              </div>
+         </div>
+         
+     }
+        
+     </div> 
+           
+
+}
+
+
+
+
+
+	
+
+@*         <div >
+                    <img src="~/Images/boy1.png" class="img-rounded" />
+                    <img src="~/Images/boy2.png" class="img-rounded" />
+                    <img src="~/Images/boy3.png" class="img-rounded" />
+                </div>*@

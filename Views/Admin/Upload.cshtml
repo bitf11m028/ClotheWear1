@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<ClotheWear.Models.ImageTable>  
+<html>
+<head>
+	<title>Clothe Wear</title>
+    <link rel="stylesheet" href="~/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap.min.css" />
+    <link rel="stylesheet" href ="~/bootstrap-theme.min.css" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="~/Images/favicon.ico" />
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style2.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style3.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/animate-custome.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/demo.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery.jcarousel.js" ></script>
+	<script type="text/javascript" src="~/Scripts/DD_belatedPNG-min.js" ></script>
+	<script type="text/javascript" src="~/Scripts/functions.js" ></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.5.2.js" ></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Cabin_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tabs.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jqtransform.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js" ></script>
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+            <section>				
+                <div id="container_demo" >
+                     
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            
+                             <form method="post" action="~/Admin/FileUpload" enctype="multipart/form-data">
+                             
+                                 <h1>Upload</h1>
+                               <p> 
+                                 Title 
+                                 <input type="text" name="t1" /> &nbsp&nbsp&nbsp<br /></p>
+                                <p> Price
+                                 <input type="text" name="p1" /> &nbsp&nbsp&nbsp<br />
+                                 </p><p>Discription
+                                 <input type="text" name="d1" /> &nbsp&nbsp&nbsp<br />
+                                 </p><p>Catagory
+                                 <input type="text" name="c1" /> &nbsp&nbsp&nbsp
+                                 </p><p>Image
+                                 <input type="file" name="file" id="file" style="width:90%;" /><br />
+                                </p><input type="submit" value="Upload" class="submit" />
+                                
+                            
+                                 </form>
+                        </div>
+
+
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+    </html>
+
+@* <div class="container" >
+     <div class="col-sm-7 col-md-5">
+<form action="~/Admin/FileUpload" method="post" enctype="multipart/form-data">
+
+    
+    Title
+    <input type="text" name="t1" /> &nbsp&nbsp&nbsp<br />
+    Price
+    <input type="text" name="p1" /> &nbsp&nbsp&nbsp<br />
+    Discription
+    <input type="text" name="d1" /> &nbsp&nbsp&nbsp<br />
+    Catagory
+    <input type="text" name="c1" /> &nbsp&nbsp&nbsp
+    Image
+    <input type="file" name="file" id="file" style="width:100%;" /><br />
+    <input type="submit" value="Upload" class="submit" />
+</form>
+    </div>
+     </div>*@

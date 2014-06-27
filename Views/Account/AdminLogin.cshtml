@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+@model ClotheWear.Models.signup 
+<html>
+<head>
+	<title>Clothe Wear</title>
+    <link rel="stylesheet" href="~/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap.min.css" />
+    <link rel="stylesheet" href ="~/bootstrap-theme.min.css" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="~/Images/favicon.ico" />
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style2.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style3.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/animate-custome.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/demo.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery.jcarousel.js" ></script>
+	<script type="text/javascript" src="~/Scripts/DD_belatedPNG-min.js" ></script>
+	<script type="text/javascript" src="~/Scripts/functions.js" ></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.5.2.js" ></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Cabin_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tabs.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jqtransform.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js" ></script>
+
+</head>
+<body>
+<div class="container">
+
+            <section>				
+                <div id="container_demo" >
+                      <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                             <h1>Log in</h1> 
+                             @using (Html.BeginForm("AdminChek", "Account", FormMethod.Post))
+                             {
+                               
+                                  @Html.AntiForgeryToken()
+                                 @Html.ValidationSummary(true)
+                                <p> 
+                                    @Html.LabelFor(i=>i.Email)
+                                    @Html.TextBoxFor(model => model.Email, new { @placeholder = "email" }) 
+                                     @Html.ValidationMessageFor(i => i.Email)
+                                </p>
+                                <p> 
+                                    @Html.LabelFor(i=>i.Password)
+                                    @Html.TextBoxFor(model => model.Password, new { @type="Password" ,@placeholder = "password" }) 
+                                     @Html.ValidationMessageFor(i => i.Password)
+                                 
+                                </p>
+                                <p class="login button"> 
+                                    
+                                    <input type="submit" value="Login" /> 
+								</p>
+                                
+                                
+                            }
+                        </div>
+
+
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/jqueryval")
+    </body>
+    </body>
+</html>

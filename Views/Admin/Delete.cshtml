@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+
+ <table border="1">
+                  <tr>
+                      <td><h3>Product</h3></td><td><h3>Title</h3></td><td><h3>Price</h3></td><td><h3>Description</h3></td><td><h3>Delete</h3></td>
+                  </tr>
+
+                  @foreach (var x in Model)
+            {
+               <tr>
+                  <td><img src="~/images/@x.ImageUrl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                  <td><h4>@x.Title</h4></td>
+                  <td><h4>@x.Price</h4></td>
+                  <td><h4>@x.Description</h4></td>
+                          
+                  <td><a href="~/Admin/Deleteitem/@x.Id"><button type="button" class="btn btn-primary" > Delete </button></a></td>
+                          
+               </tr>
+            }
+
+              </table>

@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "AboutUs";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>Clothe Wear</title>
+    <link href="~/bootstrap.css" rel="stylesheet"/>
+    <link href="~/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/bootstrap-theme.min.css" rel="stylesheet"/>
+    <script src="~/Scripts/bootstrap.js" ></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="~/Images/favicon.ico" />
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+	<script src="~/Scripts/jquery-1.7.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/jquery.jcarousel.js" type="text/javascript"></script>
+	<script src="~/Scripts/DD_belatedPNG-min.js" type="text/javascript"></script>
+	<script src="~/Scripts/functions.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.5.2.js" ></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Cabin_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tabs.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jqtransform.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+     <style type="text/css">
+    h2{
+     margin: 0;     
+     color: #666;
+     padding-top: 90px;
+     font-size: 52px;
+     font-family: "trebuchet ms", sans-serif;    
+    }
+    .item{
+     background: #333;    
+     text-align: center;
+     height: 600px !important;
+    }
+    .carousel{
+     margin-top: 40px;
+    }
+    .bs-example{
+	    margin: 20px;
+    }
+    .bs-exampl{
+	    margin: 10px;
+    }
+    .img {
+        margin: 70px;
+         }
+</style>
+</head>
+<body>
+	<div class="shell">		
+		  <nav class ="navbar navbar-inverse ">
+    <div class ="navbar-header">
+        <a class="navbar-brand" href="~/Home/Home" > Clothe Wear</a>
+    </div>
+        <div >
+            <ui class ="nav navbar-nav">
+                <li class ="active"><a href="~/Home/Home" > Home </a></li>
+                <li ><a href="~/Home/AboutUs" > About Us  </a></li>
+                <li ><a href="~/Home/ContactUs" > Contact Us </a></li>
+            </ui>
+
+            <form class ="navbar-form navbar-left pull-right" action="/Home/Login" role ="search">
+                <div class ="form-group">
+                    <a href="/Home/Checkout" type="button" class="btn btn-default btn-lg">
+                    @ViewBag.Count
+                    </a> <button type="submit"  class="btn btn-primary"  > Login   </button>
+                     <a class="btn btn-primary" type="button" href="~/Home/Signup">Sign Up</a>
+                    <input type="text" class ="form-control" placeholder="search" />
+                </div>
+                <button type="button" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+       </nav>
+        <nav class="navbar navbar-inverse">
+         
+        <div class="bs-example" >
+            <a type="button" href="/Home/Home" class="btn btn-default btn-lg">  Home</a>
+            <a type="button" href="/Home/Kids" class="btn btn-primary btn-lg">  Kids</a>
+            <a type="button" href="/Home/Men" class="btn btn-info btn-lg">  Men</a>
+            <a type="button" href="/Home/Women" class="btn btn-success btn-lg">  Women</a>
+            <a type="button" href="/Home/boys" class="btn btn-warning btn-lg">  Boys</a>
+            <a type="button" href ="/Home/Girls" class="btn btn-danger btn-lg">  Girls</a>
+        
+        </div>
+            </nav>
+			 <div>
+                    <h1>
+                        Welcome to ClotheWear.com. 
+                        Your one stop shop online for clothes.
+                        We offer a complete range of fashion products for men, women & boys! 
+                        Choose from exciting range of mens tees, women tops, linen shirts, 
+                        denims and a whole lot more. Clothe Wear offers free shipping and 
+                        cash on delivery. Get the best prices and online shopping experience 
+                        always with Clothe Wear.com
+                    </h1>
+
+                </div>
+			<!-- END Navigation -->
+			<!-- Main -->
+			<div id="main">
+				<!-- Sidebar -->
+               
+				<div id="sidebar">
+					<div class="box">
+						<div class="title">
+							<h2>Follow Us</h2>
+							<img class="bullet" src="~/Images/bullet.png" alt="small grey bullet" />
+						</div>	
+						<ul class="socials">
+							<li><a title="Facebook" href="#"><img src="~/Images/fb.png" alt="facebook icon" />facebook</a></li>
+							<li><a title="Tweeter" href="#"><img src="~/Images/tweet.png" alt="tweeter icon" />twitter</a></li>
+							
+							<li><a title="Blogger" href="#"><img src="~/Images/blogger.png" alt="blogger icon" />blogger</a></li>
+							
+						</ul>
+					</div>
+				</div>
+				
+				</div>
+               
+
+
+				<!-- END Content -->
+				<div class="cl"></div>
+		<!-- END Wrapper Middle -->
+		<div id="wrapper-bottom"></div>	
+		<!-- Footer  -->
+		<div id="footer">
+			<span class="author"><a href="http://www.ClotheWear.com/">Design by: Mirza Zeeshan</a></span>
+			<p><a title="About Us" href="~/Home/AboutUs">About Us</a><span>&frasl;&frasl;</span>
+                <a title="Site Map" href="#">Site Map</a><span>&frasl;&frasl;</span>
+                <a title="Advanced Search" href="#">Advanced Search</a><span>&frasl;&frasl;</span>
+                <a title="Customer Service" href="#">Customer Service</a><span>&frasl;&frasl;</span>
+                <a title="Contact Us" href="~/Home/ContactUs">Contact Us</a><span>&frasl;&frasl;</span></p>
+		</div>
+		<!-- END Footer -->
+</body>
+</html>

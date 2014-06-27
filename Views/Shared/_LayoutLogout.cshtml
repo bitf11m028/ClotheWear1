@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  
+      <link href="bootstrap.css" rel="stylesheet"/>
+      <script src="bootstrap.js" ></script>
+
+
+    <title>Clothe Wear</title>
+
+    <link href="~/bootstrap.css" rel="stylesheet"/>
+    <link href="~/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/bootstrap-theme.min.css" rel="stylesheet"/>
+    <script src="~/Scripts/bootstrap.js" ></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="~/Images/favicon.ico" />
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+	<script src="~/Scripts/jquery-1.7.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/jquery.jcarousel.js" type="text/javascript"></script>
+	<script src="~/Scripts/DD_belatedPNG-min.js" type="text/javascript"></script>
+	<script src="~/Scripts/functions.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.5.2.js" ></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Cabin_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tabs.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jqtransform.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+     <style type="text/css">
+    h2{
+     margin: 0;     
+     color: #666;
+     padding-top: 90px;
+     font-size: 52px;
+     font-family: "trebuchet ms", sans-serif;    
+    }
+    .item{
+     background: #333;    
+     text-align: center;
+     height: 600px !important;
+    }
+    .carousel{
+     margin-top: 40px;
+    }
+    .bs-example{
+	    margin: 20px;
+    }
+    .bs-exampl{
+	    margin: 10px;
+    }
+    .img {
+        margin: 70px;
+         }
+</style>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $("#serc").click(function () {
+                $.getJSON("/Admin/getItem?item_id=" + $("#item").val(), function (data) {
+                    if (data == false) {
+                        alert("Item does not exist");
+                    }
+                    else
+                    {
+                        var url = "/Admin/show_item?Id=" + data.Id + "&t=" + data.Title + "&p=" + data.Price + "&d=" + data.Description + "&c=" + data.Category + "&i=" + data.ImageUrl;
+                        window.location.href = url;
+                    
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+        <div class="shell">		
+		  <nav class ="navbar navbar-inverse ">
+    <div class ="navbar-header">
+        <a class="navbar-brand" href="~/Home/Home" > Clothe Wear</a>
+    </div>
+        <div >
+            <ui class ="nav navbar-nav">
+                <li class ="active"><a href="~/Home/Home" > Home </a></li>
+                <li ><a href="~/Home/AboutUs" > About Us  </a></li>
+                <li ><a href="~/Home/ContactUs" > Contact Us </a></li>
+                
+            </ui>
+
+            <form class ="navbar-form navbar-left pull-right" action="/Home/Login" role ="search">
+                <div class ="form-group">
+                    <a href="/Home/Checkout" type="button" class="btn btn-default">
+                        <img src="~/Images/Capture.png">
+                    @ViewBag.Count
+                    </a>
+                     <a type="button"  class="btn btn-primary"  href="~/Home/Logout"  > Logout  </a>
+                    
+                    <input type="text" class ="form-control" placeholder="search" />
+                </div>
+                <button id="serc" type="button" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+       </nav>
+        <nav class="navbar navbar-inverse">
+         
+        <div class="bs-example" >
+            <a type="button" href="/Home/Home" class="btn btn-default btn-lg">  Home</a>
+            <a type="button" href="/Home/Kids" class="btn btn-primary btn-lg">  Kids</a>
+            <a type="button" href="/Home/Men" class="btn btn-info btn-lg">  Men</a>
+            <a type="button" href="/Home/Women" class="btn btn-success btn-lg">  Women</a>
+            <a type="button" href="/Home/boys" class="btn btn-warning btn-lg">  Boys</a>
+            <a type="button" href ="/Home/Girls" class="btn btn-danger btn-lg">  Girls</a>
+        
+        </div>
+            </nav>
+			@RenderBody()
+			<!-- END Navigation -->
+			<!-- Main -->
+			
+
+            
+
+            	<div class="cl"></div>
+		<!-- END Wrapper Middle -->
+		<div id="wrapper-bottom"></div>	
+		<!-- Footer  -->
+		<div id="footer">
+			<span class="author"><a href="~/Home/ContactUs">Design by: Mirza Zeeshan</a></span>
+			<p><a title="About Us" href="~/Home/AboutUs">About Us</a><span>&frasl;&frasl;</span><a title="Site Map" href="#">Site Map</a><span>&frasl;&frasl;</span><a title="Advanced Search" href="#">Advanced Search</a><span>&frasl;&frasl;</span><a title="Customer Service" href="#">Customer Service</a><span>&frasl;&frasl;</span><a title="Contact Us" href="~/Home/ContactUs">Contact Us</a><span>&frasl;&frasl;</span></p>
+		</div>
+		<!-- END Footer -->
+    
+</body>
+</html>

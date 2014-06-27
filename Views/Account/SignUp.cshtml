@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Signup";
+    Layout = null;
+}
+
+@model ClotheWear.Models.signup
+<html>
+<head>
+	<title>Clothe Wear</title>
+    <link rel="stylesheet" href="~/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap.min.css" />
+    <link rel="stylesheet" href ="~/bootstrap-theme.min.css" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="~/Images/favicon.ico" />
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style2.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/style3.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/animate-custome.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/demo.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js" ></script>
+	<script type="text/javascript" src="~/Scripts/jquery.jcarousel.js" ></script>
+	<script type="text/javascript" src="~/Scripts/DD_belatedPNG-min.js" ></script>
+	<script type="text/javascript" src="~/Scripts/functions.js" ></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.min.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.5.2.js" ></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Cabin_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tabs.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.jqtransform.js" ></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+ <script src="~/Scripts/bootstrap.js" type="text/javascript"></script>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+         <script>
+             $(document).ready(function () {
+    
+                 $('#btn1').click(function () {
+                     var Email = $('#Email').val();
+                     $('#checking').show();
+                     $.getJSON("/Account/check?Email=" + Email, function (data) {
+                         $('#checking').hide();
+                         if (data == true)
+                         {
+                             $('#res').text("Email already exist,try another");
+                         }
+                         else
+                         {
+                             $('#res').text("you can signup by this email");
+                         }
+                     });
+                 });
+             });
+    </script>
+
+
+</head>
+<body>
+   
+<div class="container">
+            
+            <section>	
+               			
+                <div id="container_demo" >
+                    
+                      <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        
+                        <div id="login" class="animate form">
+                            <h1>Sign Up</h1>
+                        @using (Html.BeginForm("Add_User", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                           
+                               <p>  
+                                    @Html.LabelFor(i => i.UserName)
+                                    @Html.TextBoxFor(model => model.UserName, new { @placeholder = "UserName" }) 
+                                    @Html.ValidationMessageFor(model => model.UserName)     
+                                </p>
+                                     
+   
+                            
+                                    @Html.LabelFor(i => i.Email)
+                                     @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @id = "email" })
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                         <div id="res"><p id="res1"></p></div>
+                             <div id="checking">Checking...</div>
+                            <button type="button" id="btn1" class="btn btn-info pull-right">Check</button><br />
+                               <br /> <p> 
+                                     @Html.LabelFor(i => i.Password)
+                                     @Html.TextBoxFor(model => model.Password, new {  @placeholder = "Password" , @type = "Password" })
+                                   @Html.ValidationMessageFor(model => model.Password)
+                                </p>
+                                <p> 
+                                     @Html.LabelFor(i => i.Con_Password)
+                                     @Html.TextBoxFor(model => model.Con_Password, new { @type = "Password", @placeholder = "Confirm_Password" })
+                                        @Html.ValidationMessageFor(model => model.Con_Password)                     
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+                                    @Html.ActionLink("Go To Log in", "Login", "Account", new { @class = "to_register" })
+								
+								</p>
+                                
+                        }
+                        </div>
+
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+
+
+   @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/jqueryval")
+    </body>
+</html>
+
+                
+
+                        @*, @required = "required", @class = "youpasswd"
+                , @required = "required", @class = "youpasswd"
+            , @required = "required", @class = "youmail"                
+           , @required = "required", @class = "uname"*@

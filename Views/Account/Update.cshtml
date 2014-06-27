@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+ }
+<div class="col-md-1">
+              
+         </div>
+          @foreach(var item in Model)
+          {
+         <div class="col-xs-10">
+
+             <form action="~/Admin/Save_Update/@item.Id" method="post">
+              <table border="1">
+                  <tr>
+                      <td><h3>Product</h3></td><td><h3>Title</h3></td><td><h3>Price</h3></td><td><h3>Description</h3></td><td><h3>Update</h3></td>
+                  </tr>
+
+                      <tr>
+                          <td><img src="~/images/@item.ImageUrl" class="img-thumbnail" style="height:150px; width:150px" alt="MyPic" /></td>
+                          <td><input type="text" class="form-control" name="t1" value="@item.Title" /></td>
+                          <td><input type="text" class="form-control" name="p1" value="@item.Price" /></td>
+                          <td><input type="text" class="form-control" name="d1" value="@item.Description" /></td>
+                          
+                          
+                          <td><input type="Submit" class="btn btn-primary" value="Update" /></td>
+                          
+                      </tr>
+                  
+
+              </table>
+                 </form>
+         </div>
+             
+          }
+     
